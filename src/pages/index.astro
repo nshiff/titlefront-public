@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'Capture every enquiry',
+    body: 'Placeholder: describe how AutoEnquire collects inbound enquiries in one place.',
+  },
+  {
+    title: 'Respond faster',
+    body: 'Placeholder: describe how it helps teams reply promptly and consistently.',
+  },
+  {
+    title: 'Stay organised',
+    body: 'Placeholder: describe tracking, follow-ups, and visibility for the team.',
+  },
+];
+---
+
+<Layout title="Titlefront — Software for handling inbound enquiries">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Software that keeps enquiries from slipping through.</h1>
+      <p class="lede">
+        Titlefront builds tools that help businesses receive, track, and answer
+        the enquiries that matter. (Placeholder copy: replace with your own.)
+      </p>
+      <a class="button" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="product" class="alt">
+    <div class="wrap">
+      <h2>AutoEnquire</h2>
+      <p>
+        Placeholder: one or two sentences on what AutoEnquire does and who it
+        is for.
+      </p>
+      <div class="grid">
+        {
+          features.map((f) => (
+            <div class="card">
+              <h3>{f.title}</h3>
+              <p>{f.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About Titlefront</h2>
+      <p>
+        Titlefront is a small, independent software company. Placeholder: add
+        a sentence or two about who you are, where you're based, and why you
+        built this.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>
+        Questions or feedback? Email us at
+        <a href="mailto:hello@titlefront.com">hello@titlefront.com</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
