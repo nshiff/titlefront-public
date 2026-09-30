@@ -1,72 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const features = [
-  {
-    title: 'Capture every enquiry',
-    body: 'Placeholder: describe how AutoEnquire collects inbound enquiries in one place.',
-  },
-  {
-    title: 'Respond faster',
-    body: 'Placeholder: describe how it helps teams reply promptly and consistently.',
-  },
-  {
-    title: 'Stay organised',
-    body: 'Placeholder: describe tracking, follow-ups, and visibility for the team.',
-  },
+// Fill in photo (path under /public), title and linkedin to show them.
+const team: { name: string; photo?: string; title?: string; linkedin?: string }[] = [
+  { name: 'Josh Gardner', title: 'Operations Director', linkedin: 'https://www.linkedin.com/in/josh-gardner-a9b456b9/' },
+  { name: 'Nate Shiff', title: 'Software Developer Director', linkedin: 'https://www.linkedin.com/in/nate-shiff' },
 ];
+
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .map((p) => p[0])
+    .join('');
 ---
 
-<Layout title="Titlefront — Software for handling inbound enquiries">
+<Layout
+  title="Titlefront - Software for the home-buying process in the UK"
+  description="Titlefront is building AutoEnquire, an AI document analysis solution seeking to dramatically decrease the typical length of a property transaction."
+>
   <section class="hero">
     <div class="wrap">
-      <h1>Software that keeps enquiries from slipping through.</h1>
+      <h1>Software for the home-buying process in the UK</h1>
       <p class="lede">
-        Titlefront builds tools that help businesses receive, track, and answer
-        the enquiries that matter. (Placeholder copy: replace with your own.)
+        Titlefront is building AutoEnquire, an AI document analysis solution
+        seeking to dramatically decrease the typical length of a property
+        transaction.
       </p>
-      <a class="button" href="#contact">Get in touch</a>
     </div>
   </section>
 
-  <section id="product" class="alt">
+  <section class="alt">
     <div class="wrap">
-      <h2>AutoEnquire</h2>
-      <p>
-        Placeholder: one or two sentences on what AutoEnquire does and who it
-        is for.
-      </p>
-      <div class="grid">
+      <h2 class="center">Titlefront is:</h2>
+      <div class="team">
         {
-          features.map((f) => (
-            <div class="card">
-              <h3>{f.title}</h3>
-              <p>{f.body}</p>
+          team.map((p) => (
+            <div class="person">
+              {p.photo ? (
+                <img class="photo" src={p.photo} alt={p.name} width="128" height="128" />
+              ) : (
+                <div class="photo" aria-hidden="true">{initials(p.name)}</div>
+              )}
+              <div class="name">{p.name}</div>
+              {p.title && <div class="role">{p.title}</div>}
+              {p.linkedin && (
+                <a href={p.linkedin} rel="noopener">LinkedIn</a>
+              )}
             </div>
           ))
         }
       </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="wrap">
-      <h2>About Titlefront</h2>
-      <p>
-        Titlefront is a small, independent software company. Placeholder: add
-        a sentence or two about who you are, where you're based, and why you
-        built this.
-      </p>
-    </div>
-  </section>
-
-  <section id="contact" class="alt">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <p>
-        Questions or feedback? Email us at
-        <a href="mailto:hello@titlefront.com">hello@titlefront.com</a>.
-      </p>
     </div>
   </section>
 </Layout>

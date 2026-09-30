@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title,
-  description = 'Titlefront builds software that helps businesses handle inbound enquiries.',
+  description = 'Titlefront builds software for the home-buying process in the UK.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -33,11 +33,6 @@ const year = new Date().getFullYear();
     <header class="site">
       <div class="wrap">
         <a class="brand" href="/">Titlefront</a>
-        <nav class="site" aria-label="Primary">
-          <a href="/#product">Product</a>
-          <a href="/#about">About</a>
-          <a href="/#contact">Contact</a>
-        </nav>
       </div>
     </header>
 
@@ -48,11 +43,6 @@ const year = new Date().getFullYear();
     <footer class="site">
       <div class="wrap">
         <span>&copy; {year} Titlefront. All rights reserved.</span>
-        <span>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="mailto:hello@titlefront.com">hello@titlefront.com</a>
-        </span>
       </div>
     </footer>
   </body>
