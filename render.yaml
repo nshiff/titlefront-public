@@ -1,7 +1,7 @@
 services:
   - type: web
     runtime: static
-    name: titlefront-site
+    name: titlefront-public
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     autoDeployTrigger: commit
