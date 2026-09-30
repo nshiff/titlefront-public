@@ -12,7 +12,3 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
-    # Add custom domains after the first deploy succeeds (see notes):
-    # domains:
-    #   - titlefront.com
-    #   - titlefront.co.uk
